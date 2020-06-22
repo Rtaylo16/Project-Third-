@@ -3,7 +3,10 @@ import React from "react";
 
 function Header() {
     return (
-        <header style={{height:"50px"} }>
+      <header style={{height:"50px",
+                     backgroundColor:"gray",
+                     color:"white",
+                     } }>
             <nav>
                <div className="container">
                    <div className="row">
