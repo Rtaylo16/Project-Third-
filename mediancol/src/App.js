@@ -5,6 +5,7 @@ import Home from "./components/Home.js";
 import LivingCost from "./LivingCost.js";
 import Footer from "./components/footer";
 import City from "./city";
+import Jobs from "./components/JobSelection";
 //import  Background from "./components/images/CitiPicture.png";
 
 
@@ -30,9 +31,15 @@ export default function App() {
             <li>
               <Link to="/LivingCost">Living Cost</Link>
             </li>
+            <li>
+              <Link to="/jobs">Job Selection</Link>
+            </li>
           </ul>
 
           <Switch>
+          <Route path="/jobs">
+              <Jobs />
+            </Route>
             <Route path="/LivingCost">
               <LivingCost />
             </Route>
