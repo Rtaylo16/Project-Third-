@@ -3,7 +3,8 @@ import './App.css';
 import Header from "./components/Header.js";
 import Home from "./components/Home.js";
 import LivingCost from "./LivingCost.js";
-import Footer from "./components/footer"
+import Footer from "./components/footer";
+import City from "./city";
 //import  Background from "./components/images/CitiPicture.png";
 
 
@@ -19,36 +20,33 @@ export default function App() {
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
 
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/LivingCost">Living Cost</Link>
-              </li>
-            </ul>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/city">Select City</Link>
+            </li>
+            <li>
+              <Link to="/LivingCost">Living Cost</Link>
+            </li>
+          </ul>
 
-            <Switch>
-              <Route path="/LivingCost">
-                <LivingCost />
-              </Route>
-              <Route path="/Home">
-                <Home />
+          <Switch>
+            <Route path="/LivingCost">
+              <LivingCost />
+            </Route>
+            <Route path="/city">
+              <City />
+            </Route>
+            <Route path="/">
+              <Home />
 
-
-
-              </Route>
-              <Route path="/">
-                <Home />
-
-              </Route>
-            </Switch>
-          </div>
-          <Footer />
+            </Route>
+          </Switch>
         </div>
+        <Footer />
+      </div>
     </Router>
   );
 }
