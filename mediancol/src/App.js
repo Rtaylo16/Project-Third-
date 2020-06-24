@@ -3,7 +3,7 @@ import './App.css';
 import Header from "./components/Header.js";
 import Home from "./components/Home.js";
 import LivingCost from "./LivingCost.js";
-import Footer from "./components/footer"
+import Footer from "./components/footer";
 //import  Background from "./components/images/CitiPicture.png";
 
 
