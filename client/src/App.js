@@ -4,11 +4,8 @@ import Header from "./components/Header.js";
 import Home from "./components/Home.js";
 import LivingCost from "./LivingCost.js";
 import Footer from "./components/footer";
-<<<<<<< HEAD
-=======
 import City from "./city";
 import Jobs from "./components/JobSelection";
->>>>>>> 429c685862e1193687b52ed8858ab83d40094716
 //import  Background from "./components/images/CitiPicture.png";
 
 
