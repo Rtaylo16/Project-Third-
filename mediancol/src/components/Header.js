@@ -22,7 +22,7 @@ function Header() {
             <div className="container-fluid" style={style.global}>
 
                 <div className="row" style={style.height}>
-                    <div className="col-sm-4" style={style.height}>
+                    <div className="col-sm-3" style={style.height}>
 
                         <img src={MedianCol} alt="app logo" style={style.image} />
                     </div>
@@ -31,8 +31,9 @@ function Header() {
                         <Link className="text-light" to="/home">MedianCOL </Link>
                     </div>
                     <div className="col-sm-1 align-self-center text-center " ><Link className="text-light" to="/projects"> About</Link></div>
-                    <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/Contact"> LivingCost</Link></div>
-
+                    <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/LivingCost"> LivingCost</Link></div>
+                    <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/jobs"> JobSelection</Link></div>
+                    <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/city">Select City</Link></div>
                 </div>
 
             </div>
