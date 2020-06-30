@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import 'react-dropdown/style.css';
 import Dropdown from 'react-dropdown';
- 
 
-function Dropdowns(){
+
+
 const options = [
     { value: 'Albuquerque, NM, United States', label: 'Albuquerque, NM, United States' },
     { value: 'Anchorage, AK, United States', label: 'Anchorage, AK, United States' },
@@ -441,19 +441,34 @@ const options = [
     { value: 'Tripoli, Libya', label: 'Tripoli, Libya' },
     { value: 'Tunis, Tunisia', label: 'Tunis, Tunisia' },
     { value: 'Vancouver, Canada', label: 'Vancouver, Canada' }
-  
+
 ];
 
+class Dropdowns extends Component{
+    constructor(props) {
+        super(props)
+        this.state = {
+            selected: ("")
+        }
+        this._onSelect = this._onSelect.bind(this)
+    }
 
-const defaultOption = options[0];
+    _onSelect(option) {
+        console.log('You selected ', option.label)
+        this.setState({ selected: option })
+    }
+ render () {
+    const defaultOption = this.state.selected
+    const placeHolderValue = typeof this.state.selected === 'string' ? this.state.selected : this.state.selected.label
+    return (
+        <div>
+            <Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
+            You've selected
+            <strong> {placeHolderValue} </strong>
+        </div>
 
-return(
-<div>
-
-<Dropdown options={options} className='droop' value={defaultOption} placeholder="Select an option" />
-</div>
-);
-
+    );
+ }
 }
 
 export default Dropdowns;
