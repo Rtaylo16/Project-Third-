@@ -4,10 +4,27 @@ const Schema = mongoose.Schema;
 
 
 const costSchema = new Schema({
-title: {
-    type: String,
-    required: true
-}
+    city_id: {
+        type: String,
+        required: true
+    },
+    city_name: {
+        type: String,
+        required: true
+    },
+    job: {
+        type: String,
+        required: true
+    },
+    city_id2: {
+        type: String,
+        required: true
+    },
+    city_name2: {
+        type: String,
+        required: true
+    },
+
 
 })
 
