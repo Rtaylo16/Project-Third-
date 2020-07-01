@@ -1,18 +1,18 @@
   
-import axios from "axios";
+// import axios from "axios";
 
-export default {
+// export default {
 
-    getBooks: function(title) {
-    return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title);
-  },
+//     getBooks: function(title) {
+//     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title);
+//   },
 
-  getsavedbooks: function() {
-    return axios.get("/api/books/");
-  },
+//   getsavedbooks: function() {
+//     return axios.get("/api/books/");
+//   },
  
   
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
-  }
-};
+//   saveBook: function(bookData) {
+//     return axios.post("/api/books", bookData);
+//   }
+// };
