@@ -72,7 +72,7 @@ class Dropdowns extends Component{
  render () {
     const defaultOption = this.state.selected
     const placeHolderValue = typeof this.state.selected === 'string' ? this.state.selected : this.state.selected.label
-    const Value = typeof this.state.selected === 'string' ? this.state.selected : this.state.selected.value
+    const Value2 = typeof this.state.selected === 'string' ? this.state.selected : this.state.selected.value
     // console.log(Value);
     return (
         <div>
@@ -86,5 +86,3 @@ class Dropdowns extends Component{
 }
 
 export default Dropdowns;
-
-
