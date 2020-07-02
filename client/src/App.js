@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 import Header from "./components/Header.js";
 import Home from "./components/Home.js";
-import LivingCost from "./LivingCost.js";
+import LivingCost from "./components/LivingCost.js";
 import Footer from "./components/footer";
-import City from "./city";
+import City from "./components/city";
 import Jobs from "./components/JobSelection";
 //import  Background from "./components/images/CitiPicture.png";
 
@@ -55,6 +55,8 @@ export default function App() {
         <Footer />
       </div>
     </Router>
+     
+    
   );
 }
 
