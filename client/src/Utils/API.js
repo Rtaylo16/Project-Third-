@@ -1,10 +1,8 @@
   
-import axios from 'axios';
+// import axios from "axios";
 
-export default {
-    getCities: function(){
-        return axios.get('/api/cost')
-    }
+// export default {
+
 //     getBooks: function(title) {
 //     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title);
 //   },
@@ -17,4 +15,4 @@ export default {
 //   saveBook: function(bookData) {
 //     return axios.post("/api/books", bookData);
 //   }
-};
+// };
