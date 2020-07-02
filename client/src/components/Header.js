@@ -3,6 +3,7 @@ import React from "react";
 import MedianCol from "./images/MedianCol.png";
 
 
+
 function Header() {
     const style = {
         height:{
@@ -22,18 +23,32 @@ function Header() {
             <div className="container-fluid" style={style.global}>
 
                 <div className="row" style={style.height}>
-                    <div className="col-sm-4" style={style.height}>
+                    <div className="col-sm-2" style={style.height}>
 
                         <img src={MedianCol} alt="app logo" style={style.image} />
+                        
                     </div>
-                    <div className="col-sm-3" ></div>
+                    <div className="col-sm-2" ></div>
                     <div className="col-sm-2 align-self-center text-center " >
-                        <Link className="text-light" to="/home">MedianCOL </Link>
+                       
                     </div>
-                    <div className="col-sm-1 align-self-center text-center " ><Link className="text-light" to="/projects"> About</Link></div>
-                    <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/Contact"> LivingCost</Link></div>
+                    <div className="col-sm-1 align-self-center text-center " ><Link className="text-light" to="/projects"> Home</Link></div>
+                    <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/LivingCost"> LivingCost</Link></div>
+                    <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/jobs"> JobSelection</Link></div>
+                    <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/city"> Contact Us</Link></div>
+                    
+                
+
+                    
+
+
 
                 </div>
+
+
+                
+            
+               
 
             </div>
 
