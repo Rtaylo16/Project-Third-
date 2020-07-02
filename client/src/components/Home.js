@@ -5,6 +5,7 @@ import charlotte from './images/charlotte.jpg'
 import newYork from './images/newYork.jpg'
 import 'react-dropdown/style.css';
 import Dropdowns from './dropdowndata';
+import IconLabelButtons from "./button";
 
 
 
@@ -28,6 +29,9 @@ const style = {
     },
     choose: {
         color: 'white'
+    },
+    button: {
+        
     }
 }
 const cityData = [
@@ -97,6 +101,9 @@ const Home = () => {
                 <div>Housing Cost {((currentCity.housing / currentCity.avgIncome) * 100).toFixed(2)}% of Income </div>
             </div> */}
                         <div><Dropdowns /></div>
+                        <div style={style.button}>
+                        <IconLabelButtons/>
+                        </div>
                     </div>
                     <div class="col"></div>
                 </div >
