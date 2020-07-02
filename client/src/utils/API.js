@@ -1,26 +1,18 @@
-import axios from "axios";
-
-
-export default {
-
-  getCity: function() {
-    return axios.get("https://api.teleport.org/api/cities/{?search}");
-  },
   
-  geturbanareas: function(){
-    return axios.get("https://api.teleport.org/api/urban_areas/slug:")
-  },
+// import axios from "axios";
 
-  getBasicInfo: function() {
-    return axios.get("https://api.teleport.org/api/cities/geonameid:5391959");
-  },
+// export default {
+
+//     getBooks: function(title) {
+//     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title);
+//   },
+
+//   getsavedbooks: function() {
+//     return axios.get("/api/books/");
+//   },
  
   
-  getQualityOfLife: function() {
-    return axios.get("https://api.teleport.org/api/urban_areas/slug:/scores/");
-  },
-
-  getUrbanPhotos: function() {
-      return axios.get("https://api.teleport.org/api/urban_areas/slug:/images/");
-  }
-}; 
+//   saveBook: function(bookData) {
+//     return axios.post("/api/books", bookData);
+//   }
+// };
