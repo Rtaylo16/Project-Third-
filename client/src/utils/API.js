@@ -1,18 +1,22 @@
-  
-// import axios from "axios";
+import axios from "axios";
 
-// export default {
 
-//     getBooks: function(title) {
-//     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title);
-//   },
+export default {
 
-//   getsavedbooks: function() {
-//     return axios.get("/api/books/");
-//   },
+  getCity: function() {
+    return axios.get("https://api.teleport.org/api/cities/{?search}");
+  },
+
+  getBasicInfo: function() {
+    return axios.get("https://api.teleport.org/api/cities/geonameid:5391959");
+  },
  
   
-//   saveBook: function(bookData) {
-//     return axios.post("/api/books", bookData);
-//   }
-// };
+  getQualityOfLife: function() {
+    return axios.get("https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/scores/");
+  },
+
+  getUrbanPhotos: function() {
+      return axios.get("https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/images/");
+  }
+}; 
