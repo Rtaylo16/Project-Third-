@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import 'react-dropdown/style.css';
 import Dropdown from 'react-dropdown';
+import API from '../Utils/API';
 
 
 
@@ -60,11 +61,20 @@ class Dropdowns extends Component{
     constructor(props) {
         super(props)
         this.state = {
+            options:[],
             selected: ("")
         }
         this._onSelect = this._onSelect.bind(this)
     }
-
+    componentDidMount(){
+        API.getCities()
+        .then(results=>{
+            console.log(results.data)
+            this.setState({
+                options:results.data
+            })
+        })
+    }
     _onSelect(option) {
         console.log('You selected ', option.label)
         this.setState({ selected: option })
@@ -76,7 +86,7 @@ class Dropdowns extends Component{
     // console.log(Value);
     return (
         <div>
-            <Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
+            <Dropdown options={this.state.options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
             You've selected
             <strong> {placeHolderValue} </strong>
         </div>
