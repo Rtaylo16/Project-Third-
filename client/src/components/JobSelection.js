@@ -5,10 +5,15 @@ import Webdevelop from "./images/Webdevelopicon.png"
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/Button'
+import Dropdowns from './seconddropdown';
 
 
 function JobSelect (){
     return(
+    <div>
+      <h2>What City would you like to live in?</h2>
+      <Dropdowns/>
+      <h2>What Tech Job are you in currently?</h2>
 <CardGroup>
   <Card>
     <Card.Img variant="top" src= {Mobileicon} />
@@ -49,6 +54,9 @@ function JobSelect (){
     </Card.Footer>
   </Card>
 </CardGroup>
+
+</div>
+
     );
 }
 

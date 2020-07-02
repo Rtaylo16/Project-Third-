@@ -3,6 +3,12 @@ import { PieChart } from 'react-minimal-pie-chart';
 import CitiPicture from "./images/CitiPicture.png"
 import charlotte from './images/charlotte.jpg'
 import newYork from './images/newYork.jpg'
+import 'react-dropdown/style.css';
+import Dropdowns from './dropdowndata';
+import IconLabelButtons from "./button";
+
+
+
 const style = {
     main: {
         "backgroundImage": `url(${CitiPicture})`, "height": "100%",
@@ -20,6 +26,12 @@ const style = {
         backgroundSize: 'cover',
         fontSize: '1rem',
         fontWeight: 700
+    },
+    choose: {
+        color: 'white'
+    },
+    button: {
+        
     }
 }
 const cityData = [
@@ -52,8 +64,21 @@ const Home = () => {
     }, [])
     const currentCity = cityData[currCity]
     return (
-        <div style={style.main} className='d-flex align-items-center' >
-            <div style={{ backgroundImage: `url(${currentCity.image})`, ...style.jumbotron }} className="jumbotron text-white text-center pt-0 pb-1">
+       
+                    <div style={style.main} className='d-flex align-items-center' >
+                         <div class="container">
+                             <div class = "row">
+                                 <div class = "col"></div>
+                                 
+                             <h1 class = "choose" style={style.choose}>Choose the City you live in</h1>
+                             
+                             <div class = "col"></div>
+                             </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+
+                        {/* <div style={{ backgroundImage: `url(${currentCity.image})`, ...style.jumbotron }} className="jumbotron text-white text-center pt-0 pb-1">
                 <h1 className=' text-center'>{currentCity.name}</h1>
                 <PieChart style={{ height: '50%' }}
                     data={[
@@ -74,8 +99,17 @@ const Home = () => {
                 <div >Average Cost of Living: ${currentCity.housing + currentCity.costOfLiving}</div>
                 <div>Average Income: ${currentCity.avgIncome} </div>
                 <div>Housing Cost {((currentCity.housing / currentCity.avgIncome) * 100).toFixed(2)}% of Income </div>
+            </div> */}
+                        <div><Dropdowns /></div>
+                        <div style={style.button}>
+                        <IconLabelButtons/>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div >
             </div>
-        </div >
+        </div>
+
     )
 }
 
