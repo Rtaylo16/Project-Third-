@@ -12,7 +12,11 @@ export default {
   },
  
   
-};   getUrbanPhotos: function() {
+  getQualityOfLife: function() {
+    return axios.get("https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/scores/");
+  },
+
+  getUrbanPhotos: function() {
       return axios.get("https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/images/");
   }
 }; 
