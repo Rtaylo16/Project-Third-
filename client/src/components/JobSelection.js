@@ -6,6 +6,8 @@ import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/Button'
 import Dropdowns from './seconddropdown';
+import Techsalary from "./salaries";
+
 
 
 function JobSelect (){
@@ -54,6 +56,9 @@ function JobSelect (){
     </Card.Footer>
   </Card>
 </CardGroup>
+
+<Techsalary/>
+
 
 </div>
 
