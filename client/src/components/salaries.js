@@ -1,30 +1,37 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Techsalary extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
         this.state = {
             data: []
         };
     }
-    componentDidMount() {
-        fetch("https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/salaries/")
-            .then((results => {
+    makesalary(slug) {
+        axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/salaries/`)
+            .then(results => {
                 console.log(results)
-                return results.json();
-                
-                })
-                .then((resultsdata) => {
-                    let salary = resultsdata.salaries[Math.floor(Math.random()*resultsdata.salaries.length)];;
-                    let jobtitle = salary.job.title;
-                    let amount = salary.salary_percentiles.percentile_75;
+                const filteredata = results.data.salaries.filter(salary=>{
+                    if(salary.job.id === "UX-DESIGNER"){
+                        return true
 
-                    this.setState({
-                        position: jobtitle,
-                        salaryamount: amount
-                    });
-                    
+                    }
+                    if (salary.job.id === "WEB-DEVELOPER"){
+                        return true
+                    }
+                    if(salary.job.id === "MOBILE-DEVELOPER"){
+                        return true
+                    }
+
+                    return false
                 })
+                this.setState({salaries:
+                    filteredata
+                })
+                }
+               
 
                 
 
@@ -33,8 +40,11 @@ class Techsalary extends Component {
 
     }
 
+    componentDidMount (){
+        this.makesalary(this.props.slug)
+    }
     render(){
-
+        console.log(this.state.salaries)
     return(<p>yum</p>)
         
     }

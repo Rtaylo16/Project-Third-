@@ -57,8 +57,7 @@ function JobSelect (){
   </Card>
 </CardGroup>
 
-<Techsalary/>
-
+<Techsalary slug= "charlotte"/>
 
 </div>
 
