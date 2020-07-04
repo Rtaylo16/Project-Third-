@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === "production") {
 }
 app.use(routes);
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/livingcost",
+  process.env.MONGODB_URI || "mongodb://localhost/cost",
   // { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
   );
 // Send every request to the React app
