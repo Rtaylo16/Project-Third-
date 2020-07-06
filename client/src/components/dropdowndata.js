@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import 'react-dropdown/style.css';
 import Dropdown from 'react-dropdown';
-import API from '../Utils/API';
+import API from '../utils/API';
 import axios from "axios";
 
 
