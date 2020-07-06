@@ -102,7 +102,7 @@ const Home = () => {
             </div> */}
                         <div><Dropdowns /></div>
                         <div style={style.button}>
-                        <IconLabelButtons/>
+                        {/* <IconLabelButtons/> */}
                         </div>
                     </div>
                     <div class="col"></div>
