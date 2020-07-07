@@ -1,4 +1,5 @@
 import axios from "axios";
+import Value from "../components/dropdowndata"
 
 export default {
     getCity: function() {
@@ -7,11 +8,14 @@ export default {
       getBasicInfo: function() {
         return axios.get("https://api.teleport.org/api/cities/geonameid:5391959");
       },
-      getQualityOfLife: function() {
-        return axios.get("https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/scores/");
+      getUrbanarea: function() {
+        return axios.get('https://api.teleport.org/api/urban_areas/slug:${Value}/');
       },
+      // getQualityOfLife: function() {
+      //   return axios.get('https://api.teleport.org/api/urban_areas/slug:'+ {Value} + '/scores/');
+      // },
     
-      getUrbanPhotos: function() {
-          return axios.get("https://api.teleport.org/api/urban_areas/slug:san-francisco-bay-area/images/");
-      }
+      // getUrbanPhotos: function() {
+      //     return axios.get('https://api.teleport.org/api/urban_areas/slug:'+ {Value} +'/images/');
+      // }
     }; 
