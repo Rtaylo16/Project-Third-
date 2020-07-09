@@ -10,10 +10,10 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-app.use(routes);
+app.use('/', routes);
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/Cost",
-  // { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
+  process.env.MONGODB_URI || "mongodb://localhost/cost",
+  { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
   );
 // Send every request to the React app
 // Define any API routes before this runs

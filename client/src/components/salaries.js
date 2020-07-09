@@ -6,87 +6,96 @@ import Webdevelop from "./images/Webdevelopicon.png"
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
+import Results from "../components/Results";
+
 
 class Techsalary extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: []
-        };
-    }
-    makesalary(slug = "charlotte", id="MOBILE-DEVELOPER") {
-        axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/salaries/`)
-            .then(results => {
-                console.log(results)
-                const filteredata = results.data.salaries.filter(salary=>{
-                    if(salary.job.id === id){
-                        return true
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    };
+  }
 
-                    }
- 
+  makesalary(coco = localStorage.getItem('value'), id = "MOBILE-DEVELOPER") {
 
-                    return false
-                })
-                console.log(filteredata)
-                this.setState({salaries:
-                    filteredata
-                })
-                }
-               
+    axios.get(`https://api.teleport.org/api/urban_areas/slug:${coco}/salaries/`)
+      .then(results => {
+        console.log(results)
+        const filteredata = results.data.salaries.filter(salary => {
+          if (salary.job.id === id) {
+            return true
 
-                
+          }
 
 
-            )
-
-    }
-
-    componentDidMount (){
-        this.makesalary(this.props.slug)
-    }
-
-    handleClick(id){
-       this.makesalary(this.props.slug,id)
-
-
-    }
-
-    savesalary(){
-        axios.post("")
-    }
+          return false
+        })
+        console.log(filteredata)
+        this.setState(
+          filteredata
+        )
+        localStorage.setItem('salary', JSON.stringify(
+          filteredata[0].salary_percentiles.percentile_75));
+        localStorage.setItem('job title',
+          filteredata[0].job.title);
+      }
 
 
-    render(){
-        
-        // console.log(this.state.salaries)
-    return(
-        <div>
-        
+
+
+
+      )
+
+  }
+
+  componentDidMount() {
+    this.makesalary(this.props.coco)
+  }
+
+  handleClick(id) {
+    this.makesalary(this.props.coco, id)
+
+
+  }
+
+
+  render() {
+
+    // console.log(this.state.salaries)
+    return (
+      <div>
+
         <h2>What Tech Job are you in currently?</h2>
         <CardGroup>
           <Card>
-            <Card.Img variant="top" src= {Mobileicon} />
+            <Card.Img variant="top" src={Mobileicon} />
             <Card.Body>
               <Card.Title>Mobile Developer</Card.Title>
               <Card.Text>
-                Mobile Developer specialise in mobile technology such as building apps for Google's Android, Apple's iOS and Microsoft's Windows Phone platforms. 
+                Mobile Developer specialise in mobile technology such as building apps for Google's Android, Apple's iOS and Microsoft's Windows Phone platforms.
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-            <Button variant="danger" onClick={()=>this.handleClick("MOBILE-DEVELOPER")}>Pick this Job!</Button>{' '}
+             
+                <Button variant="danger" onClick={() => this.handleClick("MOBILE-DEVELOPER")}  href="/results">Pick this Job!</Button>{' '}
+           
             </Card.Footer>
           </Card>
           <Card>
-            <Card.Img variant="top" src= {UXicon} />
+            <Card.Img variant="top" src={UXicon} />
             <Card.Body>
               <Card.Title>UX Designer</Card.Title>
               <Card.Text>
-              In a nutshell, the UX designer is responsible for how a product or website feels.
-              The UX designer's job is to zero in on users' underlying emotional and functional needs.
+                In a nutshell, the UX designer is responsible for how a product or website feels.
+                The UX designer's job is to zero in on users' underlying emotional and functional needs.
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-            <Button variant="danger" onClick={()=>this.handleClick("UX-DESIGNER")}>Pick this Job!</Button>{' '}
+              
+                <Button variant="danger" onClick={() => this.handleClick("UX-DESIGNER")}  href="/results" >Pick this Job!</Button>{' '}
+              
             </Card.Footer>
           </Card>
           <Card>
@@ -94,23 +103,26 @@ class Techsalary extends Component {
             <Card.Body>
               <Card.Title>Web Developer</Card.Title>
               <Card.Text>
-              A Web Developer is responsible for the coding, design and layout of a website according to a company's specifications.
-              As the role takes into consideration user experience and function, a certain level of both graphic design and computer programming is necessary.
+                A Web Developer is responsible for the coding, design and layout of a website according to a company's specifications.
+                As the role takes into consideration user experience and function, a certain level of both graphic design and computer programming is necessary.
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-            <Button variant="danger" onClick={()=>this.handleClick("WEB-DEVELOPER")}> 
-        Pick this Job!</Button>{' '}
+              
+                <Button variant="danger" onClick={() => this.handleClick("WEB-DEVELOPER")}  href="/results">
+                  Pick this Job!
+                  </Button>{''}
+     
             </Card.Footer>
           </Card>
-        </CardGroup> 
-        </div>
-        
-        )
-        
-    }
+        </CardGroup>
+      </div>
 
- 
+    )
+
+  }
+
+
 
 }
 

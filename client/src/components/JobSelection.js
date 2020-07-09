@@ -10,17 +10,16 @@ import Techsalary from "./salaries";
 
 
 
-function JobSelect (){
-    return(
-    <div>
-      <h2>What City would you like to live in?</h2>
-      <Dropdowns/>
-      <Techsalary/>
-      
+function JobSelect() {
+    const coco = localStorage.getItem('value')
+    return (
+        <div>
+            <h2>What City would you like to live in?</h2>
+            <Dropdowns />
+            <Techsalary />
 
 
-
-</div>
+        </div>
 
     );
 }
