@@ -14,24 +14,20 @@ class Techsalary extends Component {
             data: []
         };
     }
-    makesalary(slug = "charlotte") {
+    makesalary(slug = "charlotte", id="MOBILE-DEVELOPER") {
         axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/salaries/`)
             .then(results => {
                 console.log(results)
                 const filteredata = results.data.salaries.filter(salary=>{
-                    if(salary.job.id === "UX-DESIGNER"){
+                    if(salary.job.id === id){
                         return true
 
                     }
-                    if (salary.job.id === "WEB-DEVELOPER"){
-                        return true
-                    }
-                    if(salary.job.id === "MOBILE-DEVELOPER"){
-                        return true
-                    }
+ 
 
                     return false
                 })
+                console.log(filteredata)
                 this.setState({salaries:
                     filteredata
                 })
@@ -49,10 +45,14 @@ class Techsalary extends Component {
         this.makesalary(this.props.slug)
     }
 
-    handleClick(salaries){
-       this.makesalary(salaries)
+    handleClick(id){
+       this.makesalary(this.props.slug,id)
 
 
+    }
+
+    savesalary(){
+        axios.post("")
     }
 
 
@@ -73,7 +73,7 @@ class Techsalary extends Component {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-            <Button variant="danger" onClick={()=>this.handleClick()}>Pick this Job!</Button>{' '}
+            <Button variant="danger" onClick={()=>this.handleClick("MOBILE-DEVELOPER")}>Pick this Job!</Button>{' '}
             </Card.Footer>
           </Card>
           <Card>
@@ -86,7 +86,7 @@ class Techsalary extends Component {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-            <Button variant="danger" >Pick this Job!</Button>{' '}
+            <Button variant="danger" onClick={()=>this.handleClick("UX-DESIGNER")}>Pick this Job!</Button>{' '}
             </Card.Footer>
           </Card>
           <Card>
@@ -99,7 +99,7 @@ class Techsalary extends Component {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-            <Button variant="danger" > 
+            <Button variant="danger" onClick={()=>this.handleClick("WEB-DEVELOPER")}> 
         Pick this Job!</Button>{' '}
             </Card.Footer>
           </Card>
