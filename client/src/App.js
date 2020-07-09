@@ -10,6 +10,8 @@ import LivingCost from "./components/LivingCost.js";
 import Footer from "./components/footer";
 import City from "./components/city";
 import Jobs from "./components/JobSelection";
+import Private from "./components/Private"
+import TestPage from "./components/testPages"
 //import  Background from "./components/images/CitiPicture.png";
 import AuthContext from './context/authContext'
 
@@ -22,6 +24,7 @@ export default function App() {
     if(userData){
       auth.onLogin(userData)
     }
+    
   },[])
   const [auth, setAuth] = useState({
     user: "",
@@ -32,7 +35,8 @@ export default function App() {
     onLogout: function () {
       setAuth(curr => ({ ...curr, user: "" }))
       sessionStorage.setItem('userLogin', "")
-    }
+    },
+    loaded:false
   })
   return (
     <AuthContext.Provider value={auth}>
@@ -80,13 +84,11 @@ export default function App() {
               <Route path="/Button">
                 <Button />
               </Route>
-              <Route path="/AuthForm">
+              {/* <Route path="/AuthForm">
                 <AuthForm />
-              </Route>
-              <Route path="/Signup">
-                <Signup />
-
-              </Route>
+              </Route> */}
+              <Route path="/Signup" component={Signup}/>
+              <Private path="/test" component={TestPage}/>
               <Route path="/">
                 <Home />
               </Route>

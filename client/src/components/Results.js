@@ -1,4 +1,4 @@
-const { default: CardGroup } = require("react-bootstrap/CardGroup");
+const { default: CardGroup } = require("react-bootstrap/CardGroup"); 
 <CardGroup>
 <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src="holder.js/100px180" />
