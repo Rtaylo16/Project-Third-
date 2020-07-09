@@ -5,7 +5,7 @@ import charlotte from './images/charlotte.jpg'
 import newYork from './images/newYork.jpg'
 import 'react-dropdown/style.css';
 import Dropdowns from './dropdowndata';
-import IconLabelButtons from "./button";
+// import IconLabelButtons from "./button";
 
 
 

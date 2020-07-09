@@ -18,4 +18,12 @@ export default {
       // getUrbanPhotos: function() {
       //     return axios.get('https://api.teleport.org/api/urban_areas/slug:'+ {Value} +'/images/');
       // }
+    User:{
+      signup:function (user){
+        return axios.post('/api/user', user)
+      },
+      login:function (user){
+        return axios.post('/api/user/login', user)
+      }
+    }
     }; 
