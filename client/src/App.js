@@ -12,6 +12,7 @@ import City from "./components/city";
 import Jobs from "./components/JobSelection";
 import Private from "./components/Private"
 import TestPage from "./components/testPages"
+import Results from "./components/Results";
 //import  Background from "./components/images/CitiPicture.png";
 import AuthContext from './context/authContext'
 
@@ -52,7 +53,7 @@ export default function App() {
               <Link to="/Home">Home</Link>
             </li>
             <li>
-              <Link to="/city">Select City</Link>
+              <Link to="/results">Results Page</Link>
             </li>
             <li>
               <Link to="/LivingCost">Living Cost</Link>
@@ -95,6 +96,24 @@ export default function App() {
             </Switch>
           </div>
           <Footer />
+          </ul>
+
+          <Switch>
+          <Route path="/jobs">
+              <Jobs />
+            </Route>
+            <Route path="/LivingCost">
+              <LivingCost />
+            </Route>
+            <Route path="/results">
+              <Results />
+            </Route>
+            <Route path="/">
+              <Home />
+
+            </Route>
+           
+          </Switch>
         </div>
       </Router>
     </AuthContext.Provider>

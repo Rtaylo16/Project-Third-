@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import 'react-dropdown/style.css';
 import Dropdown from 'react-dropdown';
-import API from '../Utils/API';
 import axios from "axios";
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
@@ -9,11 +8,11 @@ import Button from 'react-bootstrap/Button'
 
 
 
-class Dropdowns extends Component{
+class Dropdowns extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            options:[ { value: 'albuquerque', label: 'Albuquerque, NM, United States' },
+            options: [{ value: 'albuquerque', label: 'Albuquerque, NM, United States' },
             { value: 'anchorage', label: 'Anchorage, AK, United States' },
             { value: 'asheville', label: 'Asheville, NC, United States' },
             { value: 'atlanta', label: 'Atlanta, GA, United States' },
@@ -66,64 +65,86 @@ class Dropdowns extends Component{
         this._onSelect = this._onSelect.bind(this)
     }
 
-    makerequest(slug){
-        axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/`)
-        .then(results=>{
-            console.log(results.data)
-            this.setState({
-                selected: results.data
+    makerequest() {
+        const hector = localStorage.getItem('value')
+        axios.get(`https://api.teleport.org/api/urban_areas/slug:${hector}/`)
+            .then(results => {
+                console.log(results.data)
+                this.setState({
+                    selected: results.data
+                })
             })
-        })
     }
 
-    // getdetails(slug){
-    // axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/scores/`)
-    // .then(results=>{
-    //     console.log(results.data)
-    //     this.setState({
-    //         clicked:results.data
-    //     })
-
-    // })
-    // }
+    getdetails(){
+        const miguel = localStorage.getItem('value')
+    axios.get(`https://api.teleport.org/api/urban_areas/slug:${miguel}/scores/`)
+    .then(results=>{
+        console.log(results.data.categories[1])
+        const hoothoot = results.data.categories[1].score_out_of_10
+        var myTrunc = Math.trunc(hoothoot)
+        this.setState({
+           myTrunc
+        })
+        localStorage.setItem('scores',  JSON.stringify(myTrunc))
+    })
+    }
     
     componentDidMount(){
     //   this.makerequest()
     }
+
     _onSelect(option) {
         console.log('You selected ', option.label)
         this.makerequest(option.value)
-       
+        localStorage.setItem('value', option.value);
+        localStorage.setItem('label', option.label)
+        //    axios.post(`https://api.teleport.org/api/urban_areas/slug:${option}/`)
+        //    .then(results => {
+        //        this.setState({
+        //            selected: results.data
+        //        })
+        //    })
+
     }
 
-    handleClick(option){
-    this.getdetails(option)
-    }
 
-    
 
+
+
+
+    handleClick(option) {
+        this.getdetails(option)
  
-    
- render () {
-    const defaultOption = this.state.selected.slug
-    const placeHolderValue =  this.state.selected.full_name
-    const Value =  this.state.selected
-    // const button = this.state.clicked.slug 
+    }
 
-    console.log(Value);
-    return (
-        <div>
-            <Dropdown options={this.state.options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
-            You've selected
-            <strong> {placeHolderValue} </strong>
+
+
+
+
+
+    render() {
+        const defaultOption = this.state.selected.slug
+        const placeHolderValue = this.state.selected.full_name
+        const Value = this.state.selected
+        // const button = this.state.clicked.slug 
+
+        console.log(Value);
+        return (
             <div>
-            <Button variant="danger" href="/jobs" onClick={()=>this.handleClick()} >Continue</Button> 
+                <Dropdown options={this.state.options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
+            You've selected
+                <strong> {placeHolderValue} </strong>
+                <div>
+                    <Link to="/jobs">
+                    <Button variant="danger"  onClick={() => this.handleClick(defaultOption, Value)} >Continue</Button>
+                    </Link>
+                </div>
             </div>
-        </div>
 
-    );
- }
- 
+        );
+    }
+
 }
 
 export default Dropdowns;
