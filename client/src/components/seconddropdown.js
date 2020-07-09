@@ -65,6 +65,7 @@ class Dropdowns extends Component{
     }
 
     makerequest(slug){
+
         axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/`)
         .then(results=>{
             console.log(results.data)
@@ -74,13 +75,30 @@ class Dropdowns extends Component{
         })
     }
     
+
+    getdetails(){
+        const dante = localStorage.getItem('value2')
+    axios.get(`https://api.teleport.org/api/urban_areas/slug:${dante}/scores/`)
+    .then(results=>{
+        console.log(results.data.categories[1])
+        const noctowl = results.data.categories[1].score_out_of_10
+        var myTrunc2 = Math.trunc(noctowl)
+        this.setState({
+           myTrunc2
+        })
+        localStorage.setItem('scores2',  JSON.stringify(myTrunc2))
+    })
+    }
+
     componentDidMount(){
     //   this.makerequest()
     }
     _onSelect(option) {
         console.log('You selected ', option.label)
         this.makerequest(option.value)
-        localStorage.setItem('value2', option.label);
+        this.getdetails(option)
+        localStorage.setItem('value2', option.value)
+        localStorage.setItem('label2', option.label)
        
     }
 

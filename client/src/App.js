@@ -27,7 +27,7 @@ export default function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/city">Select City</Link>
+              <Link to="/results">Results Page</Link>
             </li>
             <li>
               <Link to="/LivingCost">Living Cost</Link>
@@ -44,16 +44,14 @@ export default function App() {
             <Route path="/LivingCost">
               <LivingCost />
             </Route>
-            <Route path="/city">
-              <City />
+            <Route path="/results">
+              <Results />
             </Route>
             <Route path="/">
               <Home />
 
             </Route>
-            <Route path ="/results">
-              <Results />
-            </Route>
+           
           </Switch>
         </div>
         {/* <Footer /> */}

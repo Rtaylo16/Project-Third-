@@ -65,8 +65,9 @@ class Dropdowns extends Component {
         this._onSelect = this._onSelect.bind(this)
     }
 
-    makerequest(slug) {
-        axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/`)
+    makerequest() {
+        const hector = localStorage.getItem('value')
+        axios.get(`https://api.teleport.org/api/urban_areas/slug:${hector}/`)
             .then(results => {
                 console.log(results.data)
                 this.setState({
@@ -75,16 +76,19 @@ class Dropdowns extends Component {
             })
     }
 
-    // getdetails(slug){
-    // axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/scores/`)
-    // .then(results=>{
-    //     console.log(results.data)
-    //     this.setState({
-    //         clicked:results.data
-    //     })
-
-    // })
-    // }
+    getdetails(){
+        const miguel = localStorage.getItem('value')
+    axios.get(`https://api.teleport.org/api/urban_areas/slug:${miguel}/scores/`)
+    .then(results=>{
+        console.log(results.data.categories[1])
+        const hoothoot = results.data.categories[1].score_out_of_10
+        var myTrunc = Math.trunc(hoothoot)
+        this.setState({
+           myTrunc
+        })
+        localStorage.setItem('scores',  JSON.stringify(myTrunc))
+    })
+    }
     
     componentDidMount(){
     //   this.makerequest()
@@ -93,8 +97,8 @@ class Dropdowns extends Component {
     _onSelect(option) {
         console.log('You selected ', option.label)
         this.makerequest(option.value)
-        // const { user, rememberMe } = this.state;
-        localStorage.setItem('value', option.label);
+        localStorage.setItem('value', option.value);
+        localStorage.setItem('label', option.label)
         //    axios.post(`https://api.teleport.org/api/urban_areas/slug:${option}/`)
         //    .then(results => {
         //        this.setState({
@@ -109,7 +113,7 @@ class Dropdowns extends Component {
 
 
 
-    handleClick(option, value) {
+    handleClick(option) {
         this.getdetails(option)
  
     }

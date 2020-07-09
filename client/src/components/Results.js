@@ -7,22 +7,26 @@ import Button from 'react-bootstrap/Button'
 
 class Results extends Component {
 
-  // componentDidMount() {
-  //   const valoo = localStorage.getItem('value');
-  // }
+
   render() {
-    const valoo = localStorage.getItem('value');
+    const finalValueOne =  localStorage.getItem('label')
+    const finalValueTwo =  localStorage.getItem('label2')
+    const finalJob = localStorage.getItem('job title')
+    const score= localStorage.getItem('scores')
+    const scoreTwo= localStorage.getItem('scores2')
+    const salary= localStorage.getItem('salary')
     return (
       <div>
         <CardGroup>
           <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src="holder.js/100px180" />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>{finalJob} in</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-      {valoo}
+              <h4>{finalValueOne}</h4>
+               Cost of Living Score: {score} / 10
+               <br></br>
+              Current Average Salary: {salary} 
               </Card.Text>
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>
@@ -31,10 +35,10 @@ class Results extends Component {
           <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src="holder.js/100px180" />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>{finalJob} in</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+              <h4>{finalValueTwo}</h4>
+              Cost of Living Score: {scoreTwo} / 10
     </Card.Text>
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>
