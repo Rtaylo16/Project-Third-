@@ -80,6 +80,7 @@ class Dropdowns extends Component{
     _onSelect(option) {
         console.log('You selected ', option.label)
         this.makerequest(option.value)
+        localStorage.setItem('value2', option.label);
        
     }
 
@@ -89,10 +90,11 @@ class Dropdowns extends Component{
     const defaultOption = this.state.selected.slug
     const placeHolderValue =  this.state.selected.full_name
     const Value =  this.state.selected 
-
+    // const valoo = localStorage.getItem('value');
     console.log(Value);
     return (
         <div>
+         
             <Dropdown options={this.state.options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
             You've selected
             <strong> {placeHolderValue} </strong>

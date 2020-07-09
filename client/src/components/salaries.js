@@ -57,7 +57,7 @@ class Techsalary extends Component {
 
 
     render(){
-        
+      const valoo = localStorage.getItem('value');
         // console.log(this.state.salaries)
     return(
         <div>
@@ -81,6 +81,8 @@ class Techsalary extends Component {
             <Card.Body>
               <Card.Title>UX Designer</Card.Title>
               <Card.Text>
+                {valoo} 
+                <br></br>
               In a nutshell, the UX designer is responsible for how a product or website feels.
               The UX designer's job is to zero in on users' underlying emotional and functional needs.
               </Card.Text>

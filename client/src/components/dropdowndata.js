@@ -75,16 +75,16 @@ class Dropdowns extends Component {
             })
     }
 
-    // getdetails(slug){
-    // axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/scores/`)
-    // .then(results=>{
-    //     console.log(results.data)
-    //     this.setState({
-    //         clicked:results.data
-    //     })
+    getdetails(slug){
+    axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/scores/`)
+    .then(results=>{
+        console.log(results.data)
+        // this.setState({
+        //     clicked:results.data
+        // })
 
-    // })
-    // }
+    })
+    }
 
 
 
@@ -95,6 +95,8 @@ class Dropdowns extends Component {
     _onSelect(option) {
         console.log('You selected ', option.label)
         this.makerequest(option.value)
+        // const { user, rememberMe } = this.state;
+        localStorage.setItem('value', option.label);
         //    axios.post(`https://api.teleport.org/api/urban_areas/slug:${option}/`)
         //    .then(results => {
         //        this.setState({
@@ -105,19 +107,13 @@ class Dropdowns extends Component {
     }
 
 
-    // saveCity(value) {
-    //     axios.post('/api/cost')
-    //         .then(results => {
-    //             console.log(results)
-    //         })
-    // }
 
 
 
 
     handleClick(option, value) {
         this.getdetails(option)
-        // this.saveCity(value)
+ 
     }
 
 
@@ -138,7 +134,9 @@ class Dropdowns extends Component {
             You've selected
                 <strong> {placeHolderValue} </strong>
                 <div>
-                    <Button variant="danger" href="/jobs" onClick={() => this.handleClick()} >Continue</Button>
+                    <Link to="/jobs">
+                    <Button variant="danger"  onClick={() => this.handleClick(defaultOption, Value)} >Continue</Button>
+                    </Link>
                 </div>
             </div>
 

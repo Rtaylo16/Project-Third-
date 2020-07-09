@@ -6,6 +6,7 @@ import LivingCost from "./components/LivingCost.js";
 import Footer from "./components/footer";
 import City from "./components/city";
 import Jobs from "./components/JobSelection";
+import Results from "./components/Results";
 //import  Background from "./components/images/CitiPicture.png";
 
 
@@ -49,6 +50,9 @@ export default function App() {
             <Route path="/">
               <Home />
 
+            </Route>
+            <Route path ="/results">
+              <Results />
             </Route>
           </Switch>
         </div>
