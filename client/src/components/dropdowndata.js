@@ -75,21 +75,19 @@ class Dropdowns extends Component {
             })
     }
 
-    getdetails(slug){
-    axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/scores/`)
-    .then(results=>{
-        console.log(results.data)
-        // this.setState({
-        //     clicked:results.data
-        // })
+    // getdetails(slug){
+    // axios.get(`https://api.teleport.org/api/urban_areas/slug:${slug}/scores/`)
+    // .then(results=>{
+    //     console.log(results.data)
+    //     this.setState({
+    //         clicked:results.data
+    //     })
 
-    })
-    }
-
-
-
-    componentDidMount() {
-        //   this.makerequest()
+    // })
+    // }
+    
+    componentDidMount(){
+    //   this.makerequest()
     }
 
     _onSelect(option) {
