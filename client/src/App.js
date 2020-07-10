@@ -7,8 +7,6 @@ import Login from "./components/Login.js";
 import Header from "./components/Header.js";
 import Home from "./components/Home.js";
 import LivingCost from "./components/LivingCost.js";
-import Footer from "./components/footer";
-import City from "./components/city";
 import Jobs from "./components/JobSelection";
 import Private from "./components/Private"
 import TestPage from "./components/testPages"
@@ -20,6 +18,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 export default function App() {
+
   useEffect(()=>{
     const userData = JSON.parse(sessionStorage.getItem('userLogin'))
     if(userData){
@@ -39,6 +38,7 @@ export default function App() {
     },
     loaded:false
   })
+
   return (
     <AuthContext.Provider value={auth}>
       <Router>
@@ -48,24 +48,8 @@ export default function App() {
             {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
 
-            {/* <ul>
-            <li>
-              <Link to="/Home">Home</Link>
-            </li>
-            <li>
-              <Link to="/results">Results Page</Link>
-            </li>
-            <li>
-              <Link to="/LivingCost">Living Cost</Link>
-            </li>
-            <li>
-              <Link to="/jobs">Job Selection</Link>
-            </li>
-            <li>
-            <Link to="/login">Login</Link>
-            </li>
-              </ul> */}
 
+          
             <Switch>
               <Route path="/jobs">
                 <Jobs />
@@ -75,9 +59,6 @@ export default function App() {
               </Route>
               <Route path="/login">
                 <Login />
-              </Route>
-              <Route path="/city">
-                <City />
               </Route>
               <Route path="/Home">
                 <Home />
@@ -95,8 +76,9 @@ export default function App() {
               </Route>
             </Switch>
           </div>
-          <Footer />
-          </ul>
+         
+       
+
 
           <Switch>
           <Route path="/jobs">
@@ -115,8 +97,16 @@ export default function App() {
            
           </Switch>
         </div>
+
       </Router>
     </AuthContext.Provider>
   )
 };
 
+        
+      </div>
+    </Router>
+     
+    
+  );
+}
