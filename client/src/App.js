@@ -3,8 +3,6 @@ import './App.css';
 import Header from "./components/Header.js";
 import Home from "./components/Home.js";
 import LivingCost from "./components/LivingCost.js";
-import Footer from "./components/footer";
-import City from "./components/city";
 import Jobs from "./components/JobSelection";
 import Results from "./components/Results";
 //import  Background from "./components/images/CitiPicture.png";
@@ -14,6 +12,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 export default function App() {
+
+
+  
   return (
     <Router>
       <div className="main">
@@ -21,21 +22,6 @@ export default function App() {
         <div className="mainContent">
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/results">Results Page</Link>
-            </li>
-            <li>
-              <Link to="/LivingCost">Living Cost</Link>
-            </li>
-            <li>
-              <Link to="/jobs">Job Selection</Link>
-            </li>
-          </ul>
 
           <Switch>
           <Route path="/jobs">
@@ -54,7 +40,7 @@ export default function App() {
            
           </Switch>
         </div>
-        {/* <Footer /> */}
+        
       </div>
     </Router>
      
