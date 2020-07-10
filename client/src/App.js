@@ -73,15 +73,8 @@ export default function App() {
                 <Route path="/LivingCost">
                   <LivingCost />
                 </Route>
-                <Route path="/login">
-                  <Login />
-                </Route>
-
-                {/* <Route path="/Button">
-                <Button />
-              </Route> */}
-
-
+                <Route path='/login' component={Login} />
+                 
                 <Route path="/results">
                   <Results />
                 </Route>

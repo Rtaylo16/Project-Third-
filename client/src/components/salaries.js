@@ -39,6 +39,7 @@ class Techsalary extends Component {
           filteredata[0].salary_percentiles.percentile_75));
         localStorage.setItem('job title',
           filteredata[0].job.title);
+         
       }
       )
 
@@ -72,7 +73,7 @@ class Techsalary extends Component {
             </Card.Body>
             <Card.Footer>
 
-              <Button variant="danger" onClick={() => this.handleClick("MOBILE-DEVELOPER")} href="/results">Pick this Job!</Button>{' '}
+              <Button variant="danger" onClick={() => this.handleClick("MOBILE-DEVELOPER")} href ="/results">Pick this Job!</Button>{' '}
 
             </Card.Footer>
           </Card>
@@ -87,7 +88,7 @@ class Techsalary extends Component {
             </Card.Body>
             <Card.Footer>
 
-              <Button variant="danger" onClick={() => this.handleClick("UX-DESIGNER")} href="/results" >Pick this Job!</Button>{' '}
+              <Button variant="danger" onClick={() => this.handleClick("UX-DESIGNER")} href ="/results">Pick this Job!</Button>{' '}
 
             </Card.Footer>
           </Card>
@@ -102,7 +103,7 @@ class Techsalary extends Component {
             </Card.Body>
             <Card.Footer>
 
-              <Button variant="danger" onClick={() => this.handleClick("WEB-DEVELOPER")} href="/results">
+              <Button variant="danger" onClick={() => this.handleClick("WEB-DEVELOPER")} href ="/results">
                 Pick this Job!
                   </Button>{''}
 
