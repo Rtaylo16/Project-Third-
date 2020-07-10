@@ -33,34 +33,5 @@ router.get('/:value/:value2' , (req, res) => {
 });
 
 
-// router.post('/save', (req, res) => {
-
-//     const data = req.body;
-
-//     const newCost = new Cost(data);
-
-//     // .save
-
-//     newCost.save((error) => {
-//         if (error) {
-//             res.status(500).json({ msg: 'Sorry, internal server errors' });
-//             return;
-//         }
-//         res.json({
-//             msg: 'Your data has been saved!!!'
-//         });
-
-//     });
-// });
-
-// router.get('/name', (req, res) => {
-//     const data = {
-//         username: 'peterson',
-//         age: 5
-//     };
-//     res.json(data);
-
-
-
 
 module.exports = router

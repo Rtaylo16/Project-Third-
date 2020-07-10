@@ -6,8 +6,7 @@ import Webdevelop from "./images/Webdevelopicon.png"
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
-import Results from "../components/Results";
+
 
 
 class Techsalary extends Component {
@@ -18,7 +17,7 @@ class Techsalary extends Component {
     };
   }
 
-  makesalary(coco = localStorage.getItem('value2'), id = "MOBILE-DEVELOPER") {
+  makesalary(coco = localStorage.getItem('value2'), id = "UX-DESIGNER") {
 
     axios.get(`https://api.teleport.org/api/urban_areas/slug:${coco}/salaries/`)
       .then(results => {
@@ -41,17 +40,12 @@ class Techsalary extends Component {
         localStorage.setItem('job title',
           filteredata[0].job.title);
       }
-
-
-
-
-
       )
 
   }
 
-  componentDidMount() {
-    this.makesalary(this.props.coco)
+  componentDidMount(id) {
+    this.makesalary(this.props.coco, id)
   }
 
   handleClick(id) {
@@ -63,11 +57,10 @@ class Techsalary extends Component {
 
   render() {
 
-    // console.log(this.state.salaries)
     return (
       <div>
 
-        <h2>What Tech Job are you in currently?</h2>
+        <h2 class = "bill">What Tech Job are you in currently?</h2>
         <CardGroup>
           <Card>
             <Card.Img variant="top" src={Mobileicon} />
@@ -78,9 +71,9 @@ class Techsalary extends Component {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-             
-                <Button variant="danger" onClick={() => this.handleClick("MOBILE-DEVELOPER")}  href="/results">Pick this Job!</Button>{' '}
-           
+
+              <Button variant="danger" onClick={() => this.handleClick("MOBILE-DEVELOPER")} href="/results">Pick this Job!</Button>{' '}
+
             </Card.Footer>
           </Card>
           <Card>
@@ -93,9 +86,9 @@ class Techsalary extends Component {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              
-                <Button variant="danger" onClick={() => this.handleClick("UX-DESIGNER")}  href="/results" >Pick this Job!</Button>{' '}
-              
+
+              <Button variant="danger" onClick={() => this.handleClick("UX-DESIGNER")} href="/results" >Pick this Job!</Button>{' '}
+
             </Card.Footer>
           </Card>
           <Card>
@@ -108,11 +101,11 @@ class Techsalary extends Component {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              
-                <Button variant="danger" onClick={() => this.handleClick("WEB-DEVELOPER")}  href="/results">
-                  Pick this Job!
+
+              <Button variant="danger" onClick={() => this.handleClick("WEB-DEVELOPER")} href="/results">
+                Pick this Job!
                   </Button>{''}
-     
+
             </Card.Footer>
           </Card>
         </CardGroup>

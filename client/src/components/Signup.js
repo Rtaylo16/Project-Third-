@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link, Redirect } from 'react-router-dom';
-//import logoImg from "../img/logo.jpg";
-// import { Card, Form, Input } from './AuthForm';
 import API from "../Utils/API";
 
 function Signup() {

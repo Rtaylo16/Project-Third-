@@ -27,24 +27,21 @@ function Header() {
             <div className="container-fluid" style={style.global}>
 
                 <div className="row" style={style.height}>
-                    <div className="col-sm-4" style={style.height}>
+                    <div className="col-sm-8" style={style.height}>
 
                         <img src={MedianCol} alt="app logo" style={style.image} />
                         {auth.user?<span className="text-light"> Welcome {auth.user.email}!</span>:null}
                     </div>
-                    {/* <div className="col-sm-2" ></div> */}
+                    
                     <div className="col-sm-2 align-self-center text-center " >
 
                     </div>
-                    <div className="col-sm-1 align-self-center text-center " ><Link className="text-light" to="/Home"> Home</Link></div>
-                    <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/LivingCost"> Living Cost</Link></div>
-                    <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/jobs"> Job Selection</Link></div>
-                    <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/city"> Contact Us</Link></div>
-
+                    <div className="col-sm-1 align-self-center text-center " ><Link className="text-light" to="/"> Home</Link></div>
+            
                     {
                         auth.user ? 
-                            <div className="col-sm-1 align-self-center text-center text-light" onClick={handleLogout} style={{ cursor: 'pointer' }}>logout</div>
-                            : <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/login"> login</Link></div>
+                            <div className="col-sm-1 align-self-center text-center text-light" onClick={handleLogout} style={{ cursor: 'pointer' }}>Logout</div>
+                            : <div className="col-sm-1 align-self-center text-center" ><Link className="text-light" to="/login">Login</Link></div>
 
                     }
 
