@@ -1,3 +1,4 @@
 module.exports ={
-    Cost: require('./cost')
+    Cost: require('./cost'),
+    User: require('./user')
 }

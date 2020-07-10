@@ -5,7 +5,8 @@ import charlotte from './images/charlotte.jpg'
 import newYork from './images/newYork.jpg'
 import 'react-dropdown/style.css';
 import Dropdowns from './dropdowndata';
-import IconLabelButtons from "./button";
+import { Link } from "react-router-dom";
+// import IconLabelButtons from "./button";
 
 
 
@@ -106,6 +107,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div class="col"></div>
+                    <Link to="/test">test</Link>
                 </div >
             </div>
         </div>
