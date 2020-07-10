@@ -18,7 +18,7 @@ class Techsalary extends Component {
     };
   }
 
-  makesalary(coco = localStorage.getItem('value'), id = "MOBILE-DEVELOPER") {
+  makesalary(coco = localStorage.getItem('value2'), id = "MOBILE-DEVELOPER") {
 
     axios.get(`https://api.teleport.org/api/urban_areas/slug:${coco}/salaries/`)
       .then(results => {

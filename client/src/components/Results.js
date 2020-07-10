@@ -12,8 +12,16 @@ class Results extends Component {
     const finalValueOne =  localStorage.getItem('label')
     const finalValueTwo =  localStorage.getItem('label2')
     const finalJob = localStorage.getItem('job title')
-    const score= localStorage.getItem('scores')
-    const scoreTwo= localStorage.getItem('scores2')
+    const lScoreOne= localStorage.getItem('living scores1')
+    const hScoreOne= localStorage.getItem('house scores1')
+    const sScoreOne= localStorage.getItem('startup scores1')
+    const cScoreOne= localStorage.getItem('commute scores1')
+    const eScoreOne= localStorage.getItem('education scores1')
+    const lScoreTwo= localStorage.getItem('living scores2')
+    const hScoreTwo= localStorage.getItem('house scores2')
+    const sScoreTwo= localStorage.getItem('startup scores2')
+    const cScoreTwo= localStorage.getItem('commute scores2')
+    const eScoreTwo= localStorage.getItem('education scores2')
     const salary= localStorage.getItem('salary')
     return (
       <div>
@@ -24,9 +32,17 @@ class Results extends Component {
               <Card.Title>{finalJob} in</Card.Title>
               <Card.Text>
               <h4>{finalValueOne}</h4>
-               Cost of Living Score: {score} / 10
-               <br></br>
-              Current Average Salary: {salary} 
+              Cost of Living Score: {lScoreOne} / 10
+              <br></br>
+              Housing Score: {hScoreOne} / 10
+              <br></br>
+              Startups Score: {sScoreOne} / 10
+              <br></br>
+              Commute Score: {cScoreOne} / 10
+              <br></br>
+              Education Score: {eScoreOne} / 10
+              <br></br>
+             
               </Card.Text>
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>
@@ -38,7 +54,17 @@ class Results extends Component {
               <Card.Title>{finalJob} in</Card.Title>
               <Card.Text>
               <h4>{finalValueTwo}</h4>
-              Cost of Living Score: {scoreTwo} / 10
+              Cost of Living Score: {lScoreTwo} / 10
+              <br></br>
+              Housing Score: {hScoreTwo} / 10
+              <br></br>
+              Startups Score: {sScoreTwo} / 10
+              <br></br>
+              Commute Score: {cScoreTwo} / 10
+              <br></br>
+              Education Score: {eScoreTwo} / 10
+              <br></br>
+              Current Average Salary: {salary} 
     </Card.Text>
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>

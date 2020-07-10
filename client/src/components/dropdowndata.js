@@ -81,12 +81,28 @@ class Dropdowns extends Component {
     axios.get(`https://api.teleport.org/api/urban_areas/slug:${miguel}/scores/`)
     .then(results=>{
         console.log(results.data.categories[1])
-        const hoothoot = results.data.categories[1].score_out_of_10
-        var myTrunc = Math.trunc(hoothoot)
+        const house = results.data.categories[0].score_out_of_10
+        const live = results.data.categories[1].score_out_of_10
+        const start = results.data.categories[2].score_out_of_10
+        const commute = results.data.categories[5].score_out_of_10
+        const educate = results.data.categories[9].score_out_of_10
+        var livingTrunc = Math.trunc(live)
+        var housingTrunc = Math.trunc(house)
+        var startTrunc = Math.trunc(start)
+        var commuteTrunc = Math.trunc(commute)
+        var eduTrunc = Math.trunc(educate)
         this.setState({
-           myTrunc
+           livingTrunc,
+           housingTrunc,
+           startTrunc,
+           commuteTrunc,
+           eduTrunc
         })
-        localStorage.setItem('scores',  JSON.stringify(myTrunc))
+        localStorage.setItem('living scores1',  JSON.stringify(livingTrunc))
+        localStorage.setItem('house scores1',  JSON.stringify(housingTrunc))
+        localStorage.setItem('startup scores1',  JSON.stringify(startTrunc))
+        localStorage.setItem('commute scores1',  JSON.stringify(commuteTrunc))
+        localStorage.setItem('education scores1',  JSON.stringify(eduTrunc))
     })
     }
     

@@ -81,12 +81,30 @@ class Dropdowns extends Component{
     axios.get(`https://api.teleport.org/api/urban_areas/slug:${dante}/scores/`)
     .then(results=>{
         console.log(results.data.categories[1])
-        const noctowl = results.data.categories[1].score_out_of_10
-        var myTrunc2 = Math.trunc(noctowl)
+        const house2 = results.data.categories[0].score_out_of_10
+        const live2 = results.data.categories[1].score_out_of_10
+        const start2 = results.data.categories[2].score_out_of_10
+        const commute2 = results.data.categories[5].score_out_of_10
+        const educate2 = results.data.categories[9].score_out_of_10
+        var livingTrunc2 = Math.trunc(live2)
+        var housingTrunc2 = Math.trunc(house2)
+        var startTrunc2 = Math.trunc(start2)
+        var commuteTrunc2 = Math.trunc(commute2)
+        var eduTrunc2 = Math.trunc(educate2)
         this.setState({
-           myTrunc2
-        })
-        localStorage.setItem('scores2',  JSON.stringify(myTrunc2))
+            livingTrunc2,
+            housingTrunc2,
+            startTrunc2,
+            commuteTrunc2,
+            eduTrunc2
+         })
+       
+        localStorage.setItem('living scores2',  JSON.stringify(livingTrunc2))
+        localStorage.setItem('house scores2',  JSON.stringify(housingTrunc2))
+        localStorage.setItem('startup scores2',  JSON.stringify(startTrunc2))
+        localStorage.setItem('commute scores2',  JSON.stringify(commuteTrunc2))
+        localStorage.setItem('education scores2',  JSON.stringify(eduTrunc2))
+
     })
     }
 
