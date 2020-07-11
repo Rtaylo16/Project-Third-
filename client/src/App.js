@@ -70,9 +70,7 @@ export default function App() {
                 <Route path="/jobs">
                   <Jobs />
                 </Route>
-                <Route path="/LivingCost">
-                  <LivingCost />
-                </Route>
+                
                 <Route path='/login' component={Login} />
                  
                 <Route path="/results">
