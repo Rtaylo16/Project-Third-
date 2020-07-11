@@ -2,7 +2,15 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
-import Button from 'react-bootstrap/Button'
+import { FcMoneyTransfer } from "react-icons/fc";
+import { FcDepartment } from "react-icons/fc";
+import { FcCommandLine } from "react-icons/fc";
+import { FcInTransit } from "react-icons/fc";
+import { FcGraduationCap } from "react-icons/fc";
+import Workinglate from "./images/walk.png"
+import Walkingthecity from "./images/work.png"
+import { AwesomeButton } from "react-awesome-button";
+import "react-awesome-button/dist/styles.css";
 
 
 class Results extends Component {
@@ -27,46 +35,47 @@ class Results extends Component {
       <div>
         <CardGroup>
           <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Img variant="top" src={Workinglate} />
             <Card.Body>
               <Card.Title>{finalJob} in</Card.Title>
               <Card.Text>
               <h4>{finalValueOne}</h4>
-              Cost of Living Score: {lScoreOne} / 10
+              <FcMoneyTransfer/>Cost of Living Score: {lScoreOne} / 10
               <br></br>
-              Housing Score: {hScoreOne} / 10
+              <FcDepartment/>Housing Score: {hScoreOne} / 10
               <br></br>
-              Startups Score: {sScoreOne} / 10
+              <FcCommandLine/>Startups Score: {sScoreOne} / 10
               <br></br>
-              Commute Score: {cScoreOne} / 10
+              <FcInTransit/>Commute Score: {cScoreOne} / 10
               <br></br>
-              Education Score: {eScoreOne} / 10
+              <FcGraduationCap/>Education Score: {eScoreOne} / 10
               <br></br>
              
               </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              {/* <Button variant="primary" href="/">Start over</Button> */}
+              <AwesomeButton type="primary" href="/">Start over</AwesomeButton>
             </Card.Body>
           </Card>
 
           <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Img variant="top" src={Walkingthecity} />
             <Card.Body>
               <Card.Title>{finalJob} in</Card.Title>
               <Card.Text>
               <h4>{finalValueTwo}</h4>
-              Cost of Living Score: {lScoreTwo} / 10
+              <FcMoneyTransfer/>Cost of Living Score: {lScoreTwo} / 10
               <br></br>
-              Housing Score: {hScoreTwo} / 10
+              <FcDepartment/>Housing Score: {hScoreTwo} / 10
               <br></br>
-              Startups Score: {sScoreTwo} / 10
+              <FcCommandLine/>Startups Score: {sScoreTwo} / 10
               <br></br>
-              Commute Score: {cScoreTwo} / 10
+              <FcInTransit/>Commute Score: {cScoreTwo} / 10
               <br></br>
-              Education Score: {eScoreTwo} / 10
+              <FcGraduationCap/>Education Score: {eScoreTwo} / 10
               <br></br>
               Current Average Salary: {salary} 
     </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+            
             </Card.Body>
           </Card>
         </CardGroup>

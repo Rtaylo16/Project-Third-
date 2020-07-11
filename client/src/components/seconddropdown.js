@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import 'react-dropdown/style.css';
 import Dropdown from 'react-dropdown';
-import API from '../Utils/API';
 import axios from "axios";
 
 
@@ -126,10 +125,10 @@ class Dropdowns extends Component{
     const defaultOption = this.state.selected.slug
     const placeHolderValue =  this.state.selected.full_name
     const Value =  this.state.selected 
-    // const valoo = localStorage.getItem('value');
+
     console.log(Value);
     return (
-        <div>
+        <div class = "bill">
          
             <Dropdown options={this.state.options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
             You've selected

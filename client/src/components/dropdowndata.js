@@ -4,6 +4,7 @@ import Dropdown from 'react-dropdown';
 import axios from "axios";
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
+import '../style/style.css'
 
 
 
@@ -113,26 +114,11 @@ class Dropdowns extends Component {
     _onSelect(option) {
         console.log('You selected ', option.label)
         this.makerequest(option.value)
+        this.getdetails(option)
         localStorage.setItem('value', option.value);
         localStorage.setItem('label', option.label)
-        //    axios.post(`https://api.teleport.org/api/urban_areas/slug:${option}/`)
-        //    .then(results => {
-        //        this.setState({
-        //            selected: results.data
-        //        })
-        //    })
+}
 
-    }
-
-
-
-
-
-
-    handleClick(option) {
-        this.getdetails(option)
- 
-    }
 
 
 
@@ -147,13 +133,13 @@ class Dropdowns extends Component {
 
         console.log(Value);
         return (
-            <div>
+            <div >
                 <Dropdown options={this.state.options} onChange={this._onSelect} value={defaultOption} placeholder="Select an option" />
-            You've selected
-                <strong> {placeHolderValue} </strong>
-                <div>
+            <p class = "jeff">You've selected {placeHolderValue}</p>
+               
+                <div class = "rick">
                     <Link to="/jobs">
-                    <Button variant="danger"  onClick={() => this.handleClick(defaultOption, Value)} >Continue</Button>
+                    <Button variant="danger"  >Continue</Button>
                     </Link>
                 </div>
             </div>
