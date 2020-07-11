@@ -17,7 +17,7 @@ class Techsalary extends Component {
     };
   }
 
-  makesalary(coco = localStorage.getItem('value2'), id = "UX-DESIGNER") {
+  makesalary(coco = localStorage.getItem('value2'), id ) {
 
     axios.get(`https://api.teleport.org/api/urban_areas/slug:${coco}/salaries/`)
       .then(results => {
@@ -27,27 +27,23 @@ class Techsalary extends Component {
             return true
 
           }
-
-
           return false
         })
         console.log(filteredata)
-        this.setState(
-          filteredata
-        )
         localStorage.setItem('salary', JSON.stringify(
           filteredata[0].salary_percentiles.percentile_75));
         localStorage.setItem('job title',
           filteredata[0].job.title);
+        this.setState(
+          filteredata
+        )
+        
          
       }
       )
 
   }
 
-  componentDidMount(id) {
-    this.makesalary(this.props.coco, id)
-  }
 
   handleClick(id) {
     this.makesalary(this.props.coco, id)
